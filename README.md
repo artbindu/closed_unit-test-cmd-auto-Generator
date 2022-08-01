@@ -1,5 +1,5 @@
 # Unit-Test Generator File #
-if you have unitest files in format `.test.js` or `.test.ts`, then auto generate the single unit-test file command in format `npm run test:file <file_name>`
+if you have unitest files in format `.test.js` or `.test.ts`, then auto generate the single unit-test file command in format `npm run test:file <unite-test_file_name>`
 
 # node-app
 
