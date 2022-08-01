@@ -16,6 +16,7 @@ export class UnitTest {
 
     public generateFile(): void {
         if (!fs.existsSync(path.join(this.inputPath))) {
+            logger.error('Please add `UnitTest` file');
             return;
         }
         fs.readdirSync(path.join(this.inputPath)).forEach((dir: string) => {
@@ -29,6 +30,7 @@ export class UnitTest {
                 loggerUnitTest.info(this.generatePath(tPath));
             }
         });
+        logger.info(`Check 'UnitTest' fiels cmd data at ${this.outputPath}`);
     }
 
     public extractDir(_path: string): boolean {
