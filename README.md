@@ -23,7 +23,7 @@ Unit-test-cmd-generator
 │       logger.ts
 │       unittest.ts
 │
-└───unittest        ← ← ← ← ← ← ← ← ← ← ← (add directory)
+└───unittest        ← ← ← ← ← ← ← ← ← ← ← (add directory / Modify src/config.ts for outside unittest files of the project)
     │   testfile3.test.js
     │   testfile4.test.js
     │
