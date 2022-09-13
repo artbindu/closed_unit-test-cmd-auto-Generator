@@ -12,6 +12,7 @@ logs/
 
 # Log files
 logs/*.log
+package-lock.json
 
 # Unit test reports
 TEST*.xml

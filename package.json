@@ -6,17 +6,18 @@
   "scripts": {
     "build": "tsc",
     "prod": "node ./dist/app.js",
-    "start": "npm run build && npm run prod"
+    "clear": "rimraf dist && rimraf logs",
+    "start": "npm run clear && npm run build && npm run prod"
   },
   "keywords": [],
   "author": "Biswsindhu Mandal",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "@types/lodash": "^4.14.182",
     "@types/node": "^18.0.3",
     "@types/winston": "^2.4.4",
     "lodash": "^4.17.21",
+    "rimraf": "^3.0.2",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4",
     "winston": "^3.8.1"

@@ -9,7 +9,7 @@ export class UnitTest {
     public allData: string;
 
     constructor() {
-        this.inputPath = appConfig.config.inputPath;
+        this.inputPath = appConfig.config.externalPath + appConfig.config.inputPath;
         this.outputPath = appConfig.config.outputPath;
         this.allData = '';
     }
@@ -56,6 +56,7 @@ export class UnitTest {
     }
 
     public generatePath(_path: string): string {
+        _path = _path.replace(appConfig.config.replaceData.findStr, appConfig.config.replaceData.replaceStr);
         const st: string = `npm run test:file "src\\${_path}"`;
         this.allData += ((this.allData ? ' && ' : '') + st);
         return st;
