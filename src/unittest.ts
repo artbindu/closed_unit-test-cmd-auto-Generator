@@ -16,7 +16,7 @@ export class UnitTest {
 
     public generateFile(): void {
         if (!fs.existsSync(path.join(this.inputPath))) {
-            logger.error('Please add `UnitTest` file');
+            logger.error('Please add `UnitTest` file : ' + this.inputPath);
             return;
         }
         fs.readdirSync(path.join(this.inputPath)).forEach((dir: string) => {
@@ -42,7 +42,7 @@ export class UnitTest {
             if (stats.isDirectory()) {
                 this.extractDir(tPath);
             } else {
-                if (tPath.indexOf('test.js') >= 0 || tPath.indexOf('test.ts') >= 0) {
+                if (this.isUnittestFile(tPath)) {
                     loggerUnitTest.info(this.generatePath(tPath));
                 }
             }
@@ -55,9 +55,14 @@ export class UnitTest {
         return true;
     }
 
+    public isUnittestFile(filepath) {
+        return (filepath.indexOf('test.js') >= 0 || filepath.indexOf('test.ts') >= 0);
+    }
+
     public generatePath(_path: string): string {
+        if (!this.isUnittestFile(_path)) return '';
         _path = _path.replace(appConfig.config.replaceData.findStr, appConfig.config.replaceData.replaceStr);
-        const st: string = `npm run test:file "src\\${_path}"`;
+        const st: string = `npm run test:file "${_path}"`;
         this.allData += ((this.allData ? ' && ' : '') + st);
         return st;
     }

@@ -3,12 +3,13 @@ export default {
         path: "logs/systemlog.log"
     },
     config: {
-        externalPath: "../../../Mediakind/wmc/src/", // Unittest directory (outside of this project)
-        inputPath: "unittest",
+        externalPath: "../../../Mediakind/wmc_rollup/", // Unittest directory (outside of this project)
+        inputPath: "build_src",
         outputPath: "logs/unittest.log",
         allunittest: "logs/unittestAll.log",
         replaceData: { // remove externalPath
-            findStr: "..\\..\\..\\Mediakind\\wmc\\src\\",
+
+            findStr: "..\\..\\..\\Mediakind\\wmc_rollup\\",
             replaceStr: ''
         }
     }
